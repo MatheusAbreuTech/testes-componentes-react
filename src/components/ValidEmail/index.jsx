@@ -10,7 +10,16 @@ const ValidEmail = ({ email }) => {
   return (
     <div>
       <h2 data-testid='id-email-user'>Valor: {email}</h2>
-      <h3>{verifyEmail(email) ? 'Email Válido' : 'Email Inválido'}</h3>
+      {email && (
+        <h3
+          style={{
+            color: verifyEmail(email) ? 'green' : 'red',
+          }}
+          className={verifyEmail(email) ? 'green-text' : 'red-text'}
+          data-testid='message-validate-email'>
+          {verifyEmail(email) ? 'Email Válido' : 'Email Inválido'}
+        </h3>
+      )}
     </div>
   );
 };
