@@ -23,7 +23,10 @@ export default function InputTodo({ addTodo }) {
           onChange={(e) => handleChangeTextTodo(e.target.value)}
         />
       </label>
-      <button type='button' onClick={() => addItem(textTodo)}>
+      <button
+        type='button'
+        disabled={!textTodo}
+        onClick={() => addItem(textTodo)}>
         Adicionar
       </button>
     </section>
